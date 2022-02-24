@@ -16,7 +16,7 @@ public class ManagerTest {
     private Book book2 = new Book(11, "книга", 700, "автор2");
     private Smartphone smartphone1 = new Smartphone(2, "Honor", 5000, "Korea");
     private Smartphone smartphone2 = new Smartphone(3, "iPhone", 10000, "USA");
-    private Product product = new Product(5,"вода", 100);
+    private Product product = new Product(5, "вода", 100);
 
     @BeforeEach
     public void setUp() {
@@ -31,8 +31,8 @@ public class ManagerTest {
     public void shouldSearchByName() {
 
         Product[] actual = manager.searchBy("книга");
-        Product[] expected ={book2};
-        assertArrayEquals(actual, expected);
+        Product[] expected = {book2};
+        assertArrayEquals(expected, actual);
 
     }
 
@@ -41,7 +41,7 @@ public class ManagerTest {
 
         Product[] actual = manager.searchBy("USA");
         Product[] expected = {smartphone2};
-        assertArrayEquals(actual, expected);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -57,7 +57,7 @@ public class ManagerTest {
 
         Product[] actual = manager.searchBy("Nokia");
         Product[] expected = {};
-        assertArrayEquals(actual, expected);
+        assertArrayEquals(expected, actual);
     }
 
     @Test
@@ -65,7 +65,7 @@ public class ManagerTest {
 
         Product[] actual = manager.searchBy("iPhone");
         Product[] expected = new Product[]{book1, smartphone2};
-        assertArrayEquals(actual, expected);
+        assertArrayEquals(expected, actual);
 
     }
 }
